@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* footer.css */
+
+/* footer======================================= */
+#footBox{
+  width: 100%; height: 120px; background-color: #333; font-family: var(--korean); color: #f1f1f1;
+}
+  .foot_area{
+    width: 1200px; height: 100%;
+    margin: 0px auto; padding: 30px 50px;
+    position: relative;
+  }
+  .foot_area >ul{
+    display: flex; flex-wrap: wrap; justify-content: space-between;
+  }
+  .foot_area li:nth-child(2),.foot_area li:nth-child(3),.foot_area li:nth-child(4), .foot_area li:nth-child(5){
+    margin-top: 3px; /* logo와 높이 맞추려고 */
+    color: #a7a9ac;
+  }
+  .foot_area li:last-child{ margin-top: 25px; font-family: var(--english-font); font-size: 12px; }
+  .foot_area li >span{
+    margin-right: 15px; font-weight: 700; color: #f1f1f1;
+  }
+/* // footer======================================= */

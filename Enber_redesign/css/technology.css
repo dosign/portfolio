@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* technology.css */
+
+/* montserrat 영문 구글폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+/* reset */
+html, body{ width: 100%; height: 100%; }
+:root{
+  --black:#333132;
+  --accent-color:#f5aca2;
+  --english-font: 'Montserrat';
+  --korean: 'NanumSquare';
+  --korean-size: 1.2em/1.3em;
+}
+#sectBox, #techBox{ width: 100%; height: 100vh; overflow: hidden; }
+.sect_wrap, .tech_wrap{ 
+	width: 1200px; height: 100vh; 
+	margin: 130px auto; 
+	font: var(--korean-size) var(--korean); color: var(--black);
+}
+
+#sectBox >.sect_wrap{ margin-top: 200px; }
+#sectBox >.sect_wrap >h3{
+  font-size: 30px;  font-weight: 800; text-align: center; 
+}
+#sectBox >.sect_wrap img{
+  border-radius: 80px; margin: 140px 0 20px;
+  box-shadow: 5px 5px 15px #999;
+}	
+	.sect_wrap >.sect_list{ display: flex; justify-content: space-around; }
+	.sect_list li:nth-child(2){ font-size: 22px; text-align: center;  }
+
+
+/* 다양한 인증방식 */
+#techBox{
+  background: linear-gradient(0deg, rgba(207,138,173,0.8),rgba(246,181,156,0.8));
+}
+#techBox >.tech_wrap{ position: relative; }
+#techBox >.tech_wrap >button{ background-color: transparent; }
+#techBox >.tech_wrap >.prev{
+	position: absolute; top: 35%; left: 0;
+}
+#techBox >.tech_wrap >.next{
+	position: absolute; top: 35%; right: 0;
+}
+	.tech_wrap >.tech_list{
+		width: 100%; height: 100vh;
+		overflow: hidden;
+		text-align: center;
+	}
+		.tech_list >.list{ transition: all 0.3s ease; opacity: 0; }
+		.tech_list >.list.on{ opacity: 1; }
+		.tech_list h3{ 
+			font-size: 30px; font-weight: 700;
+			position: absolute; top: 15px; left: 40px; z-index: 2;
+		}
+		.tech_list p{
+			text-indent: 60px;
+			position: absolute; top: 50px;
+		}
+		.tech_list .img_area{ 
+			position: absolute; top: 15%; left: 10%;
+		}
+		.tech_list img{ 
+			margin-right: 20px; box-shadow: 2px 2px 5px #666; border-radius: 40px;
+		}
+		.tech_list img.sub{ 
+			opacity: 0.5;
+		}
+		.tech_list span{ 
+			position: absolute; top: 0; left: 0; z-index: 1;
+			font-size: 80px; font-weight: 800; color: #fff; opacity: 0.6;
+		}
+

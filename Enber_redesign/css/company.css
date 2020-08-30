@@ -1,0 +1,263 @@
+@charset "utf-8";
+/* company.css */
+
+/* montserrat 영문 구글폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+/* reset */
+html, body{ width: 100%; height: 100%; }
+:root{
+  --black:#333132;
+  --accent-color:#f5aca2;
+  --english-font: 'Montserrat';
+  --korean: 'NanumSquare';
+  --korean-size: 1.2em/1.3em;
+}
+.intro_area, .resolution_area, .history_area{
+  font: var(--korean-size) var(--korean);
+}
+#sectBox{
+  width: 100%;
+}
+  #sectBox >.company_title{
+    width: 100%; height: 100vh; margin: auto; padding: 0px 10px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.5),rgba(255,255,255,0.5)), url(../img/enber-bg.png) center;
+    background-size: cover;
+    background-attachment: fixed; /* 스크롤내려도 bg고정 */
+
+  }
+  #sectBox >.company_title >h3{
+    font: 50px var(--english-font); font-weight: 800; color: #f1f1f1;
+    text-align: center; letter-spacing: 4px;
+    position: relative; top: 50%; transform: translateY(-50%);
+  }
+    .company_title >.scroll_line >img{
+      position: absolute;
+      left: 48%; top: 91%;
+      height: 60px;
+      animation: line 2s ease-in-out infinite;
+      animation-fill-mode: forwards;
+    }
+    @keyframes line {
+      0%{ transform: translateY(0); }
+      50%{ transform: translateY(20PX); }
+      100%{ transform: translateY(0); }
+    }
+
+  #sectBox >.intro_area{
+    width: 100%; height: 100vh;
+    background: url(../img/bg-line.png) center;
+    background-size: cover;
+    overflow: hidden;
+  }
+    .intro_area >.company_intro{
+      width: 1200px; height: 100vh; margin: auto;
+    }
+    .company_intro >h3{
+      font-size: 50px; font-family: var(--english-font); font-weight: 700; color: #433630;
+      padding: 150px 20px 40px;
+    }
+    .company_intro >p{
+      text-indent: 50px;
+      width: 430px; margin-bottom: 140px;
+      opacity: 0;
+    }
+    .company_intro.on >p{
+      opacity: 1;
+      animation: typing 2s steps(20), blink .5s step-end infinite alternate;
+      white-space: nowrap; /* 공백처리 */
+      overflow: hidden;
+      border-right: 3px solid;
+    }
+    @keyframes typing {
+      from { width: 50px; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* what to do 설명박스 */
+    .company_intro >.intro_box{
+      display: flex; justify-content: space-around;
+    }
+    .intro_box >.intro_01 ,.intro_box >.intro_02, .intro_box >.intro_03{
+      width: 350px; height: 300px; padding: 30px;
+      text-align: center;
+      opacity: 0;
+      transition: all 1.5s ease;
+    }
+    .intro_box >.intro_02{ transition: all 1.5s ease 0.5s; }
+    .intro_box >.intro_03{ transition: all 1.5s ease 0.7s; }
+    /* 영역안으로 스크롤 되기 전 */
+    .intro_box >.intro_01, .intro_box >.intro_02, .intro_box >.intro_03{ transform: translateY(300%); }
+
+    /* 영역안으로 스크롤 들어왔을 때 */
+    .intro_box.on >div{ transform: translate(0); opacity: 1; }
+
+    .intro_box >.intro_02{ margin-top: 70px; }
+      .intro_01 >span, .intro_02 >span, .intro_03 >span{
+        font-size: 60px; font-weight: 700; color: var(--black); line-height: 100px;
+      }
+      .intro_01 >.line, .intro_02 >.line, .intro_03 >.line{
+        width: 10px; height: 10px;
+        display: block;
+        margin: 0 auto 20px;
+        background-color: #999;
+        border-radius: 50%;
+      }
+      .intro_01 >p, .intro_02 >p, .intro_03 >p{
+        font-size: 23px; line-height: 35px; margin-top: 15px;
+      }
+
+  #sectBox >.resolution_area{
+    width: 100%; height: 500px; margin: auto; padding-top: 200px;
+    text-align: center; color: #f1f1f1;
+    background: linear-gradient(0deg, rgba(0,0,0,0.5),rgba(255,255,255,0.5)), url(../img/main01.jpg) center;
+    background-size: cover;
+    background-attachment: fixed; /* 스크롤내려도 bg고정 */
+  }
+    .resolution_area >h3{
+      font-size: 40px; font-family: var(--english-font); font-weight: 700; margin-bottom: 30px;
+      text-shadow: 1px 1px 5px #333;
+    }
+    .resolution_area >p{
+      width: 420px; margin: auto; line-height: 35px; font-size: 20px; font-family: var(--korean);
+    }
+
+  /* .history_area=========================================================== */
+  #sectBox >.history_area{
+    width: 100%; height: auto;  overflow: hidden;
+  }
+    .history_area >.history_box{
+      width: 1200px; height: 100%; margin: auto; color: var(--black);
+    }
+      .history_box >h3{
+        font-size: 40px; font-family: var(--english-font);
+        text-align: center; color: #433630; font-weight: 700;
+        margin: 100px auto 180px;
+      }
+      .history_box >.his_list{
+        background: url(../img/history_bg.png) center; background-size: cover;
+      }
+      /* 2020 */
+      .history_box >.his_list >article.now{ width: 800px; height: 150px; }
+      .history_box >.his_list >article.now >.this_year{
+        width: 200px; height: 100%; display: inline-block;
+        font-size: 50px; font-weight: 800; text-align: center;
+      }
+      .history_box >.his_list >article.now >.circle{
+        display: inline-block; position: relative; top: -3px;
+        width: 25px; height: 25px; margin-left: 145px;
+        background-color: var(--accent-color);
+        border-radius: 50px;
+        transition: all 0.5s;
+        animation: circle 2s ease-in-out infinite;
+      }
+      @keyframes circle{
+        0%{ opacity: 1;  }
+        50%{ opacity: 0.8; transform: scale(1.5); }
+        100%{ opacity: 1; }
+      }
+      /* // 2020 */
+
+      .history_box >.his_list >article{
+         width: 1200px; height: 500px; margin: auto;
+       }
+      .history_box >.his_list >article:last-child{ width: 1200px; height: 300px; margin: auto; }
+      .history_box >.his_list >article >.year{
+        width: 600px; height: 350px;
+        font-size: 40px; font-weight: 800; text-align: center;
+        float: left;
+      }
+      .history_box >.his_list >article >ul{ width: 600px; height: 100%; float: left; }
+      .history_box >.his_list >article li{ margin-left: 50px; line-height: 2em; }
+
+
+      /* 서비스문의하기 button */
+      .history_box >.his_btn{
+        width: 100%; height: 300px; margin: auto;
+        background-color: #fff;
+      }
+      .history_box >.his_btn >button{
+        display: inline-block; margin: 85px auto 100px; margin-left: -130px;
+      }
+      .custom-btn {
+        width: 200px;
+        height: 60px;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 25px;
+        background: transparent;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+         box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+         7px 7px 20px 0px rgba(0,0,0,.1),
+         4px 4px 5px 0px rgba(0,0,0,.1);
+      }
+      .btn {
+        background-color: #f0ecfc; font: 19px var(--korean); font-weight: 700;
+        background-image: linear-gradient(350deg, #CF8AAD 5%, #F5B59C 74%);
+        line-height: 60px;
+        padding: 0;
+        border: none;
+      }
+      .btn span {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .btn:before,
+      .btn:after {
+        position: absolute;
+        content: "";
+        right: 0;
+        bottom: 0;
+        background: #CF8AAD;
+        transition: all 0.3s ease;
+      }
+      .btn:before{
+         height: 0%;
+         width: 2px;
+      }
+      .btn:after {
+        width: 0%;
+        height: 2px;
+      }
+      .btn:hover:before {
+        height: 100%;
+      }
+      .btn:hover:after {
+        width: 100%;
+      }
+      .btn:hover{
+        background: #fff;
+      }
+      .btn span:hover{
+        color: #333;
+      }
+      .btn span:before,
+      .btn span:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        background: #F5B59C;
+        transition: all 0.3s ease;
+      }
+      .btn span:before {
+        width: 2px;
+        height: 0%;
+      }
+      .btn span:after {
+        height: 2px;
+        width: 0%;
+      }
+      .btn span:hover:before {
+        height: 100%;
+      }
+      .btn span:hover:after {
+        width: 100%;
+      }
+    /* // .history_area=========================================================== */

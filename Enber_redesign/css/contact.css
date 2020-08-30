@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* css/contact.css */
+
+/* montserrat 영문 구글폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+/* reset */
+html, body{ width: 100%; height: 100%; }
+:root{
+  --black:#333132;
+  --accent-color:#f5aca2;
+  --english-font: 'Montserrat';
+  --korean: 'NanumSquare';
+  --korean-size: 1.2em/1.3em;
+}
+.contact_title, .contact_us{
+  font: var(--korean-size) var(--korean);
+}
+/* contact title============================================================ */
+#contact_wrap{
+  width: 100%; height: 100vh;
+}
+  #contact_wrap >.contact_title{
+    width: 100%; height: 100vh;
+    background: linear-gradient(0deg, rgba(0,0,0,0.5),rgba(255,255,255,0.5)), url(../img/contact-bg.jpg) center;
+    background-size: cover;
+  }
+  #contact_wrap >.contact_title >h3{
+    font: 50px var(--english-font); font-weight: 800; color: #f1f1f1;
+    text-align: center; letter-spacing: 4px; text-shadow: 2px 2px 5px #333;
+    position: relative; top: 50%; transform: translateY(-50%);
+  }
+  #contact_wrap >.contact_title >p{
+    font: 20px var(--korean); color: #f1f1f1;
+    text-align: center; letter-spacing: 2px;
+    position: relative; top: 50%; transform: translateY(-50%);
+  }
+  /* // contact title============================================================ */
+
+  /* contact ============================================================ */
+  #contact{ width: 100%; height: 100vh; margin: auto; overflow: hidden; }
+  #contact >.contact_us{
+    width: 1200px; height: 100vh;
+    margin: auto; padding: 200px 0;
+  }
+    .contact_us >h3{
+      font-family: var(--english-font); font-weight: 800;
+      font-size: 40px;
+      line-height: 1.3em; /* 24.96px */
+      margin-bottom: 10px;
+    }
+    .contact_us >p{
+      text-indent: 15px;
+      width: 415px;
+      opacity: 0;
+    }
+     /* 영역안으로 스크롤 시 애니메이션 시작되도록 */
+    .contact_us.on >p{
+      opacity: 1;
+      animation: typing 2s steps(20), blink .5s step-end infinite alternate;
+      white-space: nowrap; /* 공백처리 */
+      overflow: hidden;
+      border-right: 3px solid;
+    }
+    @keyframes typing {
+      from { width: 0; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    .contact_us >ul{
+      width: 400px; height: 300px;
+      background: linear-gradient(45deg, rgba(207,138,173,0.4),rgba(246,181,156,0.4));
+      border-radius: 100px;
+      float: left; margin: 100px 95px;
+      box-shadow: 2px 5px 10px #baa7b1;
+    }
+    /* 마케팅문의 / 개발문의 */
+    .contact_us li:first-child{
+      font-size: 25px; font-weight: 800; color: #5e534c; text-align: center;
+      line-height: 100px;
+      border-bottom: 2px solid #ffeef7;
+      margin-bottom: 20px;
+    }
+    /* 상세 정보 */
+    .contact_us li:nth-child(2), .contact_us li:nth-child(3), .contact_us li:nth-child(4){
+       margin-left: 60px;
+    }
+    .contact_us li >span{ display: inline-block; margin: 10px; }
+    .contact_us li >span:first-child{ color: #473633; font-weight: 800; }
+   /* // contact ============================================================ */

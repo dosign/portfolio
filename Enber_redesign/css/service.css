@@ -1,0 +1,250 @@
+@charset "utf-8";
+/* company.css */
+
+/* montserrat 영문 구글폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+/* reset */
+html, body{ width: 100%; height: 100%; }
+:root{
+  --black:#333132;
+  --accent-color:#f5aca2;
+  --english-font: 'Montserrat';
+  --korean: 'NanumSquare';
+  --korean-size: 1.2em/1.3em;
+}
+#titleBox, #costBox, #sistem, #managementBox, #benefitBox{
+  width: 100%; height: 100vh;
+}
+.cost_area, .sistem_area, .management_area, .benefit_area{
+  width: 1200px; height: 100vh; margin: auto;
+  position: relative;
+  font: var(--korean-size) var(--korean); color: var(--black);
+}
+
+  #titleBox >.title_area{
+    width: 100%; height: 100vh; margin: auto;
+    background: url(../img/phone-img.png) no-repeat; background-size: cover;
+    overflow: hidden; position: relative;
+  }
+  #titleBox .serv_title{
+    width: 1200px; height: 100vh; margin: auto;
+    text-align: right; position: relative;
+    font: var(--korean-size) var(--korean); color: var(--black);
+  }
+    .serv_title >h3{
+      position: absolute; top: 40%; right: 10px;
+      font: 40px var(--english-font); font-weight: 800; color: #433630;
+      width: 480px;
+      animation: typing 3.5s;
+      white-space: nowrap; /* 공백처리 */
+      overflow: hidden;
+    }
+    @keyframes typing {
+      from { width: 0; opacity: 0; }
+    }
+    .serv_title >span{
+      width: 480px; height: 50px;
+      position: absolute; top: 40%; right: 5px;
+      background-color: var(--accent-color);
+      display: block;
+      animation: line 2s ease-in-out;
+      animation-fill-mode: forwards;
+    }
+    @keyframes line{
+      0%{ width: 2px; }
+      100%{ width: 480px; }
+    }
+    .serv_title >p{
+      width: 400px; height: 100px; line-height: 35px;
+      position: absolute; top: 52%; right: 10px;
+    }
+
+    /* bg */
+    .cost_area, .management_area{ background: url(../img/bg2.png) no-repeat center; }
+    .sistem_area{ background: url(../img/bg4.png) no-repeat center; }
+    .benefit_area{ background: url(../img/bg3.png) no-repeat center; }
+    /* 나타나는 효과 */
+    .cost_list, .sistem_list, .management_list, .benefit_list { transition: all 0.5s ease-in-out; opacity: 0; }
+    .cost_list.on, .sistem_list.on, .management_list.on, .benefit_list.on{ opacity: 1; }
+
+  /* 비용절감 내용 */
+    .cost_area >.cost_list >img{
+      position: absolute;
+      top: 30%; left: 2%;
+      box-shadow: 3px 3px 10px #ccc;
+      border-radius: 20%;
+    }
+    .cost_area >.cost_list >span{
+      position: absolute;
+      top: 37%; right: 2.5%;
+      width: 50px; height: 8px; background-color: var(--accent-color);
+    }
+    .cost_area >.cost_list >h3{
+      position: absolute;
+      top: 41%; right: 2%;
+      font-size: 45px; font-weight: 800;
+    }
+    .cost_area >.cost_list >p{
+      width: 300px; height: 300px; text-align: right;
+      line-height: 30px;
+      position: absolute;
+      top: 51%; right: 2%;
+    }
+
+    /* 시간절약 시스템 내용 */
+      .sistem_area >.sistem_list >span{
+        position: absolute;
+        top: 37%; left: 2.5%;
+        width: 50px; height: 8px; background-color: var(--accent-color);
+      }
+      .sistem_area >.sistem_list >h3{
+        position: absolute;
+        top: 41%; left: 2%;
+        font-size: 45px; font-weight: 800;
+      }
+      .sistem_area >.sistem_list >p{
+        width: 300px; height: 300px; text-align: left;
+        line-height: 30px;
+        position: absolute;
+        top: 51%; left: 2%;
+      }
+      .sistem_area >.sistem_list >img{
+        position: absolute;
+        top: 30%; right: 2%;
+        box-shadow: 3px 3px 10px #ccc;
+        border-radius: 20%;
+      }
+
+      /* 서버관리 효율성 내용 */
+        .management_area >.management_list >img{
+          position: absolute;
+          top: 30%; left: 2%;
+          box-shadow: 3px 3px 10px #ccc;
+          border-radius: 20%;
+        }
+        .management_area >.management_list >span{
+          position: absolute;
+          top: 37%; right: 2.5%;
+          width: 50px; height: 8px; background-color: var(--accent-color);
+        }
+        .management_area >.management_list >h3{
+          position: absolute;
+          top: 41%; right: 2%;
+          font-size: 45px; font-weight: 800;
+        }
+        .management_area >.management_list >p{
+          width: 320px; height: 300px; text-align: right;
+          line-height: 30px;
+          position: absolute;
+          top: 51%; right: 2%;
+        }
+
+      /* 기대효과 내용 */
+        .benefit_area >.benefit_list >span{
+          position: absolute;
+          top: 33%; left: 2.5%;
+          width: 50px; height: 8px; background-color: var(--accent-color);
+        }
+        .benefit_area >.benefit_list >h3{
+          position: absolute;
+          top: 37%; left: 2%;
+          font-size: 45px; font-weight: 800;
+        }
+        .benefit_area >.benefit_list >p{
+          width: 300px; height: 300px; text-align: left;
+          line-height: 30px;
+          position: absolute;
+          top: 47%; left: 2%;
+        }
+        .benefit_area >.benefit_list >img{
+          position: absolute;
+          top: 24%; right: 2%;
+          box-shadow: 3px 3px 10px #ccc;
+          border-radius: 20%;
+        }
+          /* button */
+          .benefit_area >.benefit_list >button{
+            display: inline-block;
+            position: absolute;
+            top: 85%; left: 50%; transform: translateX(-50%);
+          }
+          .custom-btn {
+            width: 200px;
+            height: 60px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 25px;
+            background: transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+             box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+             7px 7px 20px 0px rgba(0,0,0,.1),
+             4px 4px 5px 0px rgba(0,0,0,.1);
+          }
+          .btn {
+            background-color: #f0ecfc; font: 19px var(--korean); font-weight: 700;
+            background-image: linear-gradient(350deg, #CF8AAD 5%, #F5B59C 74%);
+            line-height: 60px;
+            padding: 0;
+            border: none;
+          }
+          .btn span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+          .btn:before,
+          .btn:after {
+            position: absolute;
+            content: "";
+            right: 0;
+            bottom: 0;
+            background: #CF8AAD;
+            transition: all 0.3s ease;
+          }
+          .btn:before{
+             height: 0%;
+             width: 2px;
+          }
+          .btn:after {
+            width: 0%;
+            height: 2px;
+          }
+          .btn:hover:before {
+            height: 100%;
+          }
+          .btn:hover:after {
+            width: 100%;
+          }
+          .btn:hover{
+            background: #fff;
+          }
+          .btn span:hover{
+            color: #333;
+          }
+          .btn span:before,
+          .btn span:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            background: #F5B59C;
+            transition: all 0.3s ease;
+          }
+          .btn span:before {
+            width: 2px;
+            height: 0%;
+          }
+          .btn span:after {
+            height: 2px;
+            width: 0%;
+          }
+          .btn span:hover:before {
+            height: 100%;
+          }
+          .btn span:hover:after {
+            width: 100%;
+          }

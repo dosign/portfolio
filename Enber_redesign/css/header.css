@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* header.css */
+
+/* montserrat 영문 구글폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+/* reset */
+html, body{ width: 100%; height: 100%; }
+
+:root{
+  --black:#333132;
+  --accent-color:#f5aca2;
+  --english-font: 'Montserrat';
+  --korean: 'NanumSquare';
+  --korean-size: 1.2em/1.3em;
+}
+
+
+/* header======================================== */
+#headBox{
+  width: 1200px; height: 40px; padding: 10px 10px 0;
+  line-height: 40px;
+  position: fixed;
+  margin: 0 auto; top: 0; left: 0; right: 0;
+  z-index: 1; /* 최상단 */
+  display: flex; justify-content: space-between;
+}
+  #headBox >.gnb >ul{ display: flex; }
+  #headBox >.gnb li{ margin: 0 20px; }
+  #headBox >.gnb .menubar{ width: 35px; height: 35px; }
+  #headBox >.gnb li:last-child{ margin: 0; margin-left: 20px; }
+  #headBox >.gnb li >button{ background-color: transparent; }
+
+  /* menubar클릭시 나타나는 메뉴 */
+  .menubar_list{
+    background: url(../img/bg-line.png) center;
+    background-size: cover;
+    width: 100%; height: 100vh;
+    position: fixed; top: 0; left: 0;
+    overflow: hidden;
+    z-index: 3;
+    text-align: center;
+    display: none;
+  }
+  .menubar_list >.menubar{
+    font: 35px var(--english-font); font-weight: bold;
+    color: var(--black);
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  }
+  .menubar_list >.menubar >li{ margin-top: 100px; animation: menu 1s ease-in-out; }
+  .menubar_list >.menubar span{ display: block; font-size: 20px; }
+  .menubar_list >.menubar >li:hover a{
+    color: var(--accent-color);
+    background-color: var(--black);
+  }
+
+  .menubar_list >button{
+    animation: menu 1s ease-in-out;
+    position: absolute;
+    top: 5%; right: 10%;
+    font-size: 30px;
+    padding: 10px;
+    background-color: transparent;
+  }
+  .menubar_list >button:hover{
+    outline: 1px solid var(--accent-color);
+    color: var(--accent-color);
+  }
+  @keyframes menu{
+    0%{ transform: translateY(100%); opacity: 0; }
+    100%{ transform: translateY(0); opacity: 1; }
+  }
