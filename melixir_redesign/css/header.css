@@ -1,0 +1,288 @@
+@charset "utf-8";
+/* css/header.css */
+
+/* googlefont */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+
+/* reset */
+html, body{ width: 100%; height: 100%; }
+:root{
+  --black:#333132;
+  --point-color:#feeedf;
+  --english-font: 'Kumbh Sans';
+  --korean: 'NanumSquare';
+  --korean-size: 1.2em/1.3em;
+}
+
+header{
+	width: 100%; height: 60px; overflow: hidden;
+	background-color: transparent;
+	padding: 1% 2%;
+	position: fixed;
+	top: 0; left: 0;
+	display: flex; justify-content: space-between;
+	z-index: 1;
+}
+header >h1{
+	position: absolute;
+	top: 50%; left: 3%; transform: translateY(-50%);
+}
+.head_btn >.menubar{
+  position: fixed; top: 0.5%; right: 3%; transform: translateX(-50%);
+  background-color: transparent;
+  z-index: 3;
+}
+	.menubar >span{
+    display: block;
+    width: 30px; height: 2px;
+    background-color: #000;
+    margin: 10px 0;
+    transition: all 0.4s;
+  }
+  .change >.bar1{ transform: rotate(-45deg) translate(-9px,7px); }
+  .change >.bar2{ opacity: 0; }
+  .change >.bar3{ transform: rotate(45deg) translate(-9px,-8px); }
+
+/* menubar click */
+.menu_list{ /* font 35.2px */
+  width: 100%; height: 100vh;
+  position: fixed;
+	top: 100%; left: 0; /* 화면 밑에서 올라오는 효과주기 위해 */
+  z-index: 2;
+  font: 17px var(--english-font);
+  display: none;
+}
+.menu_list.on{ display:flex; }
+.menu_list .unb_responsive{ display: none; }
+
+  /* left gnb */
+  .gnb_area{
+    width: 50%; height: 100vh; background-color: var(--accent-color);
+    position: relative; overflow: hidden;
+  }
+  .gnb_area >.gnb{
+    width: 100%; height: 100%; padding: 2%;
+    position: absolute; top: 10%; left: 10%; overflow: hidden;
+  }
+    .gnb .circle{
+      position: relative; top: -15px;
+      display: inline-block;
+      width: 10px; height: 10px;
+      background-color: #b9d5c9;
+      border-radius: 50%;
+      display: none;
+    }
+    .gnb >li:first-child{ height: 10%; }
+    .gnb >.title{
+      width: 100%; height: 15%; margin-bottom: 5%;
+      font-size: 1.6em; color: #7f5b51; font-weight: 800; /* font 27.2px */
+    }
+    .gnb .sub{
+      width: 100%;
+      position: relative; top: -50px; left: 40%;
+      font-size: 0.7em; color: var(--black); font-weight: normal; /* font 11.9px */
+      display: none;
+    }
+    .gnb .sub >li{ line-height: 40px; }
+    .gnb >.kakao{ float: left; margin-right: 20px;}
+
+    /* menu.hover */
+    .gnb >.title:hover >.circle{ display: inline-block; }
+    .gnb >.title:hover >.sub{ display: block; }
+
+  /* right unb */
+  .unb_area{
+    width: 50%; height: 100vh; background-color: #b7a490;
+    position: relative; overflow: hidden;
+  }
+  .unb_area >.unb{
+    width: 390px; height: 10%; 
+    position: absolute; top: 12%; right: 5%;
+    display: flex;
+    font-size: 1em; color: var(--black); font-weight: 700; /* 17px */
+    letter-spacing: 2px;
+    text-align: center;
+  }
+    /* LOGIN MYPAGE CART */
+    .unb >li{
+      width: 120px; height: 30px; line-height: 30px;
+      margin-right: 10px;
+    }
+    .unb >li:last-child{ margin-right: 0; }
+    .unb >li:hover{ background-color: var(--black); color: #fff; }
+
+    /* img list */
+    .img_wrap{ width: 60%; height: 540px; position: absolute; top: 54%; transform: translateY(-50%); right: 15%; }
+    .img_area{
+      width: 100%; height: 500px;
+      position: absolute;
+      overflow: hidden;
+    }
+    .img_list{
+      width: 100%; height: 100%; position: relative;
+    }
+    .img_list >li{ width: 100%; height: auto; position: absolute; top: 0; left: 0; }
+    .img_list >li.on{ z-index: 1; }
+    .img_list >li img{ display: block; width: 100%; height: 100%; }
+
+    /* dot button */
+    .dot_area{
+      width: 100%; height: 20px; padding: 2% 0 0;
+      position: absolute; bottom: 20px;
+    }
+      .dot_btn{
+        width: 50%; margin: auto;
+        display: flex; justify-content: space-around;
+      }
+      .dot_btn >li{
+        width: 10px; height: 10px;
+        border: 1px solid var(--black);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .dot_btn >li.on{ background-color: var(--black); border: 0; }
+
+
+      /*
+        .col_1{ width: 8.33%; }
+        .col_2{ width: 16.66%; }
+        .col_3{ width: 25%; }
+        .col_4{ width: 33.33%; }
+        .col_5{ width: 41.66%; }
+        .col_6{ width: 50%; }
+        .col_7{ width: 58.33%; }
+        .col_8{ width: 66.66%; }
+        .col_9{ width: 75%; }
+        .col_10{ width: 83.33%; }
+        .col_11{ width: 91.66%; }
+        .col_12{ width: 100%; }
+      */
+
+      /* 세로 모드의 태블릿이나 큰 화면을 가진 스마트폰의 가로모드 */
+      @media screen and (min-width: 520px) and (max-width: 1023px) {
+
+        .menu_list{
+          width: 100%; height: 100vh;
+          position: fixed;
+        	top: 100%; left: 0;
+          z-index: 2;
+          font: 13px var(--english-font);
+          display: none;
+        }
+        .menu_list.on{ display: block; }
+
+        .gnb_area{ width: 100%; }
+        .gnb_area >.gnb{ top: 20%; left: 10%; }
+        .gnb .sub >li{ line-height: 40px; }
+        .gnb >.sns_icon img{ width: 28px; height: 28px; }
+        .gnb >.kakao{ float: left; margin-right: 20px;}
+        .gnb .sub{ left: 50%; }
+
+        .gnb_area >.unb_responsive{
+          display: block;
+          width: 390px; height: 30px;
+          position: absolute; top: 10%; right: 5%;
+          display: flex;
+          font-size: 1em; color: var(--black); font-weight: 700;
+          letter-spacing: 2px;
+          text-align: center;
+        }
+          /* LOGIN MYPAGE CART */
+          .unb_responsive >li{
+            width: 120px; height: 30px; line-height: 30px;
+            margin-right: 10px;
+          }
+          .unb_responsive >li:hover{ background-color: var(--black); color: #fff; }
+
+          /* unb */
+          .unb_area{ display: none; }
+          /* img list */
+          .img_wrap{ display: none; }
+
+      }
+
+      /*  일반적인 스마트폰의 가로모드 */
+      @media screen and (min-width: 421px) and (max-width: 519px) {
+
+        .menu_list{
+          width: 100%; height: 100vh;
+          position: fixed;
+        	top: 100%; left: 0;
+          z-index: 2;
+          font: 11px var(--english-font);
+          display: none;
+        }
+        .menu_list.on{ display: block; }
+
+        .gnb_area{ width: 100%; }
+        .gnb_area >.gnb{ top: 20%; left: 8%; }
+        .gnb >li:first-child{margin-top: 10px;} /* circle 보이도록 */
+        .gnb >.sns_icon img{ width: 26px; height: 26px; }
+        .gnb >.kakao{ float: left; margin-right: 20px; }
+        .gnb .sub{ left: 50%; }
+
+        .gnb_area >.unb_responsive{
+          display: block;
+          width: 390px; height: 30px;
+          position: absolute; top: 10%; left: 52%; transform: translateX(-50%);
+          display: flex;
+          font-size: 1em; color: var(--black); font-weight: 700;
+          letter-spacing: 2px;
+          text-align: center;
+        }
+          /* LOGIN MYPAGE CART */
+          .unb_responsive >li{
+            width: 120px; height: 30px; line-height: 30px;
+            margin-right: 10px;
+          }
+          .unb_responsive >li:hover{ background-color: var(--black); color: #fff; }
+
+          /* unb */
+          .unb_area{ display: none; }
+          /* img list */
+          .img_wrap{ display: none; }
+
+      }
+
+      /*  일반적인 스마트폰의 세로모드  */
+      @media screen and (max-width : 420px) {
+
+        .menu_list{
+          width: 100%; height: 100vh;
+          position: fixed;
+        	top: 100%; left: 0;
+          z-index: 2;
+          font: 12px var(--english-font);
+          display: none;
+        }
+        .menu_list.on{ display: block; }
+
+        .gnb_area{ width: 100%; }
+        .gnb_area >.gnb{ top: 23%; left: 10%; }
+        .gnb >li:first-child{margin-top: 10px;} /* circle 보이도록 */
+        .gnb >.sns_icon img{ width: 24px; height: 24px; }
+        .gnb >.kakao{ float: left; margin-right: 20px;}
+        .gnb .sub{ left: 50%; }
+
+        .gnb_area >.unb_responsive{
+          display: block;
+          width: 390px; height: 30px;
+          position: absolute; top: 10%; left: 52%; transform: translateX(-50%);
+          display: flex;
+          font-size: 1em; color: var(--black); font-weight: 700;
+          letter-spacing: 2px;
+          text-align: center;
+        }
+          /* LOGIN MYPAGE CART */
+          .unb_responsive >li{
+            width: 120px; height: 30px; line-height: 30px;
+            margin-right: 10px;
+          }
+          .unb_responsive >li:hover{ background-color: var(--black); color: #fff; }
+
+          /* unb */
+          .unb_area{ display: none; }
+          /* img list */
+          .img_wrap{ display: none; }
+
+      }
