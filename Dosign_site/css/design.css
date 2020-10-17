@@ -1,0 +1,108 @@
+@charset "utf=8";
+/* css/design.css */
+
+/* 1366px 이상의 너비를 가진 모니터 화면 */
+h1 { font-size: 36px; }
+.col_1{ width: 8.33%; }
+.col_2{ width: 16.66%; }
+.col_3{ width: 25%; }
+.col_4{ width: 33.33%; }
+.col_5{ width: 41.66%; }
+.col_6{ width: 50%; }
+.col_7{ width: 58.33%; }
+.col_8{ width: 66.66%; }
+.col_9{ width: 75%; }
+.col_10{ width: 83.33%; }
+.col_11{ width: 91.66%; }
+.col_12{ width: 100%; }
+
+
+/* montserrat 영문 구글폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+:root{
+  --black:#1c1c1c;
+  --accent-color: #f5aa82;
+  --english-font: 'Montserrat';
+  --korean: 'NanumSquare';
+  --korean-size: 1.2em/1.3em;
+}
+/* 텍스트 드래그 */
+::selection{ background-color: var(--accent-color); color: #fff; }
+
+#designSect{
+	width: 100%; height: auto; overflow: hidden;
+	background: url(../img/bg_02.png) center/cover;
+}
+#designSect >.sect_wrap{ max-width: 1200px; height: auto; margin: 150px auto 0; }
+  /* 프로필 영역 */
+  .sect_wrap >.profile{
+    width: 600px; height: 200px; margin: auto; padding: 10px 0;
+    display: flex; justify-content: space-between;
+    font: var(--korean-size) var(--korean); color: var(--black);
+  }
+  /* name, 인스타그램 연동 버튼 */
+  .profile >.txt_area{
+    width: 80%; height: 100%; padding: 35px 30px 0;
+  }
+    .txt_area >.prof_title{
+      width: 100%; height: 50%;
+      display: flex; justify-content: space-between;
+    }
+      .prof_title >li:first-child{ font: 38px var(--english-font); font-weight: 700; }
+      .prof_title >li:last-child{
+        width: 180px; height: 50px; line-height: 45px;
+        border: 1px solid var(--black);
+        text-align: center;
+      }
+      .prof_title >li:last-child a{ display: block; }
+
+    /* 게시글, 팔로워, 팔로우 정보 */
+    .txt_area >.prof_info{
+      width: 100%; height: 50%; margin-top: 20px;
+      display: flex; justify-content: space-between;
+    }
+      .prof_info >li >.bold{ font-weight: 700; }
+
+  /* 카테고리별 button */
+  .category_btn{
+    width: 100%; height: 150px; margin: auto; padding: 50px 0;
+    text-align: center;
+  }
+  .category_btn >button{
+    width: 180px; height: 50px;
+    margin-right: 10px;
+    border: 1px solid var(--black);
+    background-color: transparent;
+    font: 20px var(--english-font); color: var(--black);
+  }
+
+  /* content */
+  .content{
+    width: 100%; height: auto; overflow: hidden;
+    display: flex; flex-wrap: wrap; justify-content: center;
+  }
+  .content .cont{ width: 400px; height: 400px; }
+
+
+
+/* 가로모드 태블릿이나 오래된 데스크탑 모니터 */
+@media only screen and (min-width: 1024px) and (max-width: 1365px) {
+	h1 { font-size: 32px; }
+
+}
+
+/* 세로 모드의 태블릿이나 큰 화면을 가진 스마트폰의 가로모드 */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	h1 { font-size: 28px; }
+}
+
+/*  일반적인 스마트폰의 가로모드 */
+@media only screen and (min-width: 421px) and (max-width: 767px) {
+	h1 { font-size: 24px; }
+}
+
+/*  일반적인 스마트폰의 세로모드  */
+@media only screen and (max-width: 420px) {
+	h1 { font-size: 20px; }
+}
