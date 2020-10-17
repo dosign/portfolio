@@ -79,10 +79,23 @@ h1 { font-size: 36px; }
 
   /* content */
   .content{
-    width: 100%; height: auto; overflow: hidden;
+    width: 100%; height: 800px; overflow: hidden;
     display: flex; flex-wrap: wrap; justify-content: center;
   }
   .content .cont{ width: 400px; height: 400px; }
+
+  /* more button */
+  .more_btn{
+    width: 150px; height: 80px; margin: 30px auto;
+  }
+  .more_btn >button{
+    width: 100%; height: 100%; 
+    background-color: transparent;
+  }
+  .more_btn span{
+    font: 30px var(--english-font); font-weight: 700;
+    color: var(--accent-color);
+  }
 
 
 

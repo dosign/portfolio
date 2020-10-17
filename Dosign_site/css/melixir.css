@@ -32,7 +32,24 @@ h1 { font-size: 36px; }
 
 #melixirSect{
 	width: 100%; height: 1600px; overflow: hidden;
-	background: url(../img/bg.png) center/cover;
+}
+#melixirSect >.title{
+	width: 100%; height: 100vh;
+	background: linear-gradient(rgba(255,255,255,0.5),rgba(0,0,0,0.5)), url(../img/story03.jpg) center/cover;
+  background-attachment: fixed;
+}
+/* 하단 scroll 화살표 */
+.title >.scroll_line >img{
+  position: absolute; 
+  left: 50%; transform: translateX(-50%); bottom: 5%;
+  height: 60px;
+  animation: line 2s ease-in-out infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes line {
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(20PX); }
+  100%{ transform: translateY(0); }
 }
 
 
