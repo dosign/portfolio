@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<!-- 모바일에서 일반숫자가 전화번호로 인식하지 않기 위해 -->
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="description" content="Dosign 김도이의 웹 포트폴리오 사이트" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--[if IE]
+		   <script src="../ie/html5shiv/dest/html5shiv.min.js"></script>
+		   <script src="../ie/pie/PIE.js"></script>
+		   <script src="../ie/respond/dist/respond.min.js"></script>
+		<![endif]-->
+		<title>Dosign 웹 포트폴리오 사이트</title>
+
+		<!-- 나눔스퀘어 폰트적용 -->
+	  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css" />
+
+		<!-- reset css -->
+		<link href="../css/base/reset.css" rel="stylesheet" />
+	  <link href="../css/base/common.css" rel="stylesheet" />
+
+		<!-- css -->
+		<link rel="stylesheet" type="text/css" href="../css/drag/demo.css" />
+		<link rel="stylesheet" type="text/css" href="../css/drag/dragdealer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/drag/component.css" />
+
+		<!-- jquery 라이브러리(core) -->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="../js/drag/modernizr.custom.js"></script>
+	</head>
+	<body>
+	  <div class="prev_btn">
+	  	<a class="menubar" href="index.html" ><img src="../img/logo.png" alt="메인페이지로 가기" /></a>
+	  </div>
+
+		<div class="container">
+			<header id="header" class="codrops-header">
+				<button class="slider-switch">Switch view</button>
+			</header>
+			<div id="overlay" class="overlay">
+				<div class="info">
+					<span class="info-drag">Drag Sliders</span>
+					<span class="info-keys">Use Arrows</span>
+					<span class="info-switch">Switch view</span>
+					<button>Let's go!</button>
+				</div>
+			</div>
+			<div id="slideshow" class="dragslider">
+				<section class="img-dragger img-dragger-large dragdealer">
+					<div class="handle">
+						<div class="slide" data-content="content-1">
+							<div class="img-wrap"><img src="../img/enber_bg.png" alt="주식회사 엔버 리뉴얼 사이트"/></div>
+							<h2>주식회사 엔버 리뉴얼<span>2020.7.28 ~ 2020.8.31</span></h2>
+							<div class="title_btn">
+								<a href="http://doyi.dothome.co.kr/" target="_blank"><span>사이트 바로가기</span></a>
+								<a href="../img/enber.pdf" target="_blank" download><span>기획서 다운로드</span></a>
+							</div>
+							<button class="content-switch">Read more</button>
+						</div>
+						<div class="slide" data-content="content-2">
+							<div class="img-wrap"><img src="../img/melixir_bg.jpg" alt="비건브랜드 멜릭서 리뉴얼 사이트"/></div>
+							<h2>멜릭서 브랜드 리뉴얼<span>2020.9.2 ~ 2020.9.31</span></h2>
+							<div class="title_btn">
+								<a href="http://doyi.dothome.co.kr/" target="_blank"><span>사이트 바로가기</span></a>
+								<a href="../img/enber.pdf" target="_blank" download><span>기획서 다운로드</span></a>
+							</div>
+							<button class="content-switch">Read more</button>
+						</div>
+						<div class="slide" data-content="content-3">
+							<div class="img-wrap dosign_site"></div>
+							<h2>개인 포트폴리오 사이트<span>2020.10.9 ~ 2020.10.25</span></h2>
+							<div class="title_btn">
+								<a href="http://dosign.dothome.co.kr/" target="_blank"><span>사이트 바로가기</span></a>
+								<a href="../img/enber.pdf" target="_blank" download><span>기획서 다운로드</span></a>
+							</div>
+							<button class="content-switch">Read more</button>
+						</div>
+
+					</div>
+				</section><!-- /img-dragger-->
+				<!-- Content section -->
+				<section class="pages">
+					<!-- 엔버 content================================================= -->
+					<div class="content" data-content="content-1">
+						<div class="cont">
+							<h2>주식회사 엔버 리뉴얼 사이트</h2>
+							<p>overview</p>
+						</div>
+					</div>
+					<!-- //엔버 content================================================= -->
+
+					<!-- 멜릭서 content================================================= -->
+					<div class="content" data-content="content-2">
+						2
+					</div>
+					<!-- //멜릭서 content================================================= -->
+
+					<!-- Dosign site content================================================= -->
+					<div class="content" data-content="content-3">
+						3
+					</div>
+					<!-- //Dosign site content================================================= -->
+
+				</section>
+			</div>
+		</div><!-- /container -->
+		<script src="../js/drag/dragdealer.js"></script>
+		<script src="../js/drag/classie.js"></script>
+		<script src="../js/drag/dragslideshow.js"></script>
+		<script>
+			(function() {
+
+				var overlay = document.getElementById( 'overlay' ),
+					overlayClose = overlay.querySelector( 'button' ),
+					header = document.getElementById( 'header' )
+					switchBtnn = header.querySelector( 'button.slider-switch' ),
+					toggleBtnn = function() {
+						if( slideshow.isFullscreen ) {
+							classie.add( switchBtnn, 'view-maxi' );
+						}
+						else {
+							classie.remove( switchBtnn, 'view-maxi' );
+						}
+					},
+					toggleCtrls = function() {
+						if( !slideshow.isContent ) {
+							classie.add( header, 'hide' );
+						}
+					},
+					toggleCompleteCtrls = function() {
+						if( !slideshow.isContent ) {
+							classie.remove( header, 'hide' );
+						}
+					},
+					slideshow = new DragSlideshow( document.getElementById( 'slideshow' ), {
+						// toggle between fullscreen and minimized slideshow
+						onToggle : toggleBtnn,
+						// toggle the main image and the content view
+						onToggleContent : toggleCtrls,
+						// toggle the main image and the content view (triggered after the animation ends)
+						onToggleContentComplete : toggleCompleteCtrls
+					}),
+					toggleSlideshow = function() {
+						slideshow.toggle();
+						toggleBtnn();
+					},
+					closeOverlay = function() {
+						classie.add( overlay, 'hide' );
+					};
+
+				// toggle between fullscreen and small slideshow
+				switchBtnn.addEventListener( 'click', toggleSlideshow );
+				// close overlay
+				overlayClose.addEventListener( 'click', closeOverlay );
+
+			}());
+		</script>
+	</body>
+</html>

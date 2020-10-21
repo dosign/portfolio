@@ -1,0 +1,228 @@
+@charset "utf=8";
+/* css/design.css */
+
+/* 1366px 이상의 너비를 가진 모니터 화면 */
+h1 { font-size: 36px; }
+.col_1{ width: 8.33%; }
+.col_2{ width: 16.66%; }
+.col_3{ width: 25%; }
+.col_4{ width: 33.33%; }
+.col_5{ width: 41.66%; }
+.col_6{ width: 50%; }
+.col_7{ width: 58.33%; }
+.col_8{ width: 66.66%; }
+.col_9{ width: 75%; }
+.col_10{ width: 83.33%; }
+.col_11{ width: 91.66%; }
+.col_12{ width: 100%; }
+
+
+/* montserrat 영문 구글폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+:root{
+  --black:#1c1c1c;
+  --accent-color: #f5aa82;
+  --english-font: 'Montserrat';
+  --korean: 'NanumSquare';
+  --korean-size: 1.2em/1.3em;
+}
+/* 텍스트 드래그 */
+::selection{ background-color: var(--accent-color); color: #fff; }
+
+#designSect{
+	width: 100%; height: auto; overflow: hidden;
+	background: url(../img/bg_02.png) center/cover;
+}
+#designSect >.sect_wrap{ max-width: 1200px; height: auto; margin: 150px auto 0; }
+  /* 프로필 영역 */
+  .sect_wrap >.profile{
+    width: 600px; height: 200px; margin: auto; padding: 10px 0;
+    display: flex; justify-content: space-between;
+    font: var(--korean-size) var(--korean); color: var(--black);
+  }
+  /* name, 인스타그램 연동 버튼 */
+  .profile >.txt_area{
+    width: 80%; height: 100%; padding: 35px 30px 0;
+  }
+    .txt_area >.prof_title{
+      width: 100%; height: 50%;
+      display: flex; justify-content: space-between;
+    }
+      .prof_title >li:first-child{ font: 38px var(--english-font); font-weight: 700; }
+      .prof_title >li:last-child{
+        width: 180px; height: 50px; line-height: 45px;
+        border: 1px solid var(--black);
+        text-align: center;
+      }
+      .prof_title >li:last-child a{ display: block; width: 100%; height: 100%; }
+
+    /* 게시글, 팔로워, 팔로우 정보 */
+    .txt_area >.prof_info{
+      width: 100%; height: 50%; margin-top: 20px;
+      display: flex; justify-content: space-between;
+    }
+      .prof_info >li >.bold{ font-weight: 700; }
+
+  /* 카테고리별 button */
+  .category_btn{
+    width: 100%; height: 150px; margin: auto; padding: 50px 0;
+    text-align: center;
+  }
+  .category_btn >button{
+    width: 180px; height: 50px;
+    margin-right: 10px;
+    border: 1px solid var(--black);
+    background-color: transparent;
+    font: 20px var(--english-font); color: var(--black);
+  }
+
+  /* content */
+  .content{
+    width: 100%; height: 800px; overflow: hidden;
+    display: flex; flex-wrap: wrap; justify-content: center;
+  }
+  .content .cont{ width: 400px; height: 400px; cursor: pointer; position: relative; }
+  .content .cont .cont_info{
+    display: none;
+    width: 100%; height: 100%; padding: 25%;
+    background-color: rgba(0,0,0,0.7);
+    font: 16px var(--korean); color: #fff;
+    text-align: center;
+    position: absolute; top: 0;
+  }
+  .content .cont .cont_info >span{
+    display: block;
+    width: 100%; height: auto;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    font-size: 1.2em;
+  }
+  .content .cont:hover .cont_info{display: block;}
+
+  /* more button */
+  .more_btn{
+    width: 150px; height: 80px; margin: 30px auto;
+  }
+  .more_btn >button{
+    width: 100%; height: 100%;
+    background-color: transparent;
+  }
+  .more_btn span{
+    font: 30px var(--english-font); font-weight: 700;
+    color: var(--accent-color);
+  }
+
+
+
+
+/* 세로 모드의 태블릿이나 큰 화면을 가진 스마트폰의 가로모드 */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	h1 { font-size: 28px; }
+
+  #headBox{ height: 120px; }
+  #headBox >h1 img{ display: inline-block; width: 100px; }
+  /* menu button */
+  .head_btn >.menubar{ width: 50px; height: 50px; }
+
+  #designSect{ background-image: none; }
+  /* 프로필 영역 */
+  .sect_wrap >.profile{
+    width: 450px; height: 150px; padding: 0;
+    font-size: 16px;
+  }
+  .sect_wrap >.profile >a >img{width: 150px; height: 150px;}
+
+  /* name, 인스타그램 연동 버튼 */
+  .profile >.txt_area{ width: 80%; height: 100%; padding: 30px 30px 0; }
+    .prof_title >li:first-child{ font-size: 30px; margin-right: 10px; }
+    .prof_title >li:last-child{ width: 140px; height: 40px; line-height: 35px; }
+
+  /* 카테고리별 button */
+  .category_btn{
+    width: 100%; height: 100px; margin: auto; padding: 30px 0;
+    text-align: center;
+  }
+  .category_btn >button{ width: 140px; height: 40px; font-size: 18px; }
+  .category_btn >button:last-child{ margin-right: 0; }
+}
+
+/*  일반적인 스마트폰의 가로모드 */
+@media only screen and (min-width: 421px) and (max-width: 767px) {
+	h1 { font-size: 24px; }
+
+  #headBox{ height: 80px; }
+  #headBox >h1{ top: 50%; }
+  #headBox >h1 img{ display: inline-block; width: 80px; }
+  /* menu button */
+  .head_btn >.menubar{ width: 30px; height: 30px; top: 1.5%; border: 0; }
+    .menubar >span{ width: 20px; margin: 5px auto; }
+    .change >.bar1{ transform: rotate(-45deg) translate(-5px,6px); }
+    .change >.bar2{ opacity: 0; }
+    .change >.bar3{ transform: rotate(45deg) translate(-4px,-5px); }
+
+  #designSect{ background-image: none; }
+  #designSect >.sect_wrap{ margin-top: 100px; }
+  /* 프로필 영역 */
+  .sect_wrap >.profile{
+    width: 320px; height: 200px; padding: 0;
+    display: inherit; text-align: center;
+    font-size: 15px;
+  }
+  .sect_wrap >.profile >a >img{width: 100px; height: 100px;}
+
+  /* name, 인스타그램 연동 버튼 */
+  .profile >.txt_area{ width: 80%; height: 90px; padding: 10px 0 0; margin: auto; }
+  .profile >.txt_area >.prof_title{ height: 40px; }
+    .prof_title >li:first-child{ font-size: 23px; margin-right: 10px; }
+    .prof_title >li:last-child{ width: 140px; height: 35px; line-height: 30px; }
+  .profile >.txt_area >.prof_info{ height: 30px; margin-top: 15px; }
+
+  /* 카테고리별 button */
+  .category_btn{
+    width: 100%; height: 80px; margin: auto; padding: 20px 0;
+    text-align: center;
+  }
+  .category_btn >button{ width: 130px; height: 40px; margin-right: 5px; font-size: 18px; }
+  .category_btn >button:last-child{ margin-right: 0; }
+}
+
+/*  일반적인 스마트폰의 세로모드  */
+@media only screen and (max-width: 420px) {
+	h1 { font-size: 20px; }
+
+  #headBox{ height: 80px; }
+  #headBox >h1{ top: 50%; }
+  #headBox >h1 img{ display: inline-block; width: 80px; }
+  /* menu button */
+  .head_btn >.menubar{ width: 30px; height: 30px; top: 1.5%; border: 0; }
+    .menubar >span{ width: 20px; margin: 5px auto; }
+    .change >.bar1{ transform: rotate(-45deg) translate(-5px,6px); }
+    .change >.bar2{ opacity: 0; }
+    .change >.bar3{ transform: rotate(45deg) translate(-4px,-5px); }
+
+
+  #designSect{ background-image: none; }
+  #designSect >.sect_wrap{ margin-top: 100px; }
+  /* 프로필 영역 */
+  .sect_wrap >.profile{
+    width: 320px; height: 200px; padding: 0;
+    display: inherit; text-align: center;
+    font-size: 15px;
+  }
+  .sect_wrap >.profile >a >img{width: 100px; height: 100px;}
+
+  /* name, 인스타그램 연동 버튼 */
+  .profile >.txt_area{ width: 80%; height: 90px; padding: 10px 0 0; margin: auto; }
+  .profile >.txt_area >.prof_title{ height: 40px; }
+    .prof_title >li:first-child{ font-size: 23px; margin-right: 10px; }
+    .prof_title >li:last-child{ width: 140px; height: 35px; line-height: 30px; }
+  .profile >.txt_area >.prof_info{ height: 30px; margin-top: 15px; }
+
+  /* 카테고리별 button */
+  .category_btn{
+    width: 100%; height: 80px; margin: auto; padding: 20px 0;
+    text-align: center;
+  }
+  .category_btn >button{ width: 30%; height: 40px; margin-right: 5px; font-size: 18px; }
+  .category_btn >button:last-child{ margin-right: 0; }
+}

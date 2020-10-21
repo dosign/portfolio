@@ -49,13 +49,12 @@
 /* //menu button */
 
 /* menubar click */
-.menu_list{ /* font 35.2px */
-  width: 100%; height: 100vh; background-color: #ddd;
+.menu_list{
+  width: 100%; height: 100vh; background-color: #f9d196;
   position: fixed;
   top: 100%; left: 0; /* 화면 밑에서 올라오는 효과주기 위해 */
   z-index: 2;
   font: 17px var(--english-font);
   display: none;
 }
-.menu_list.on{ display:flex; }
-
+.menu_list.on{ display: flex; }
