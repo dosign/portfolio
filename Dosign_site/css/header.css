@@ -50,11 +50,36 @@
 
 /* menubar click */
 .menu_list{
-  width: 100%; height: 100vh; background-color: #f9d196;
+  width: 100%; height: 100vh; background-color: #fff;
   position: fixed;
   top: 100%; left: 0; /* 화면 밑에서 올라오는 효과주기 위해 */
   z-index: 2;
-  font: 17px var(--english-font);
+  font: 17px var(--english-font); color: var(--black);
   display: none;
 }
+.menu_list >.wrap{
+  width: 100%; height: 650px;
+  position: absolute; top: 53%; left: 50%; transform: translate(-50%,-50%);
+  text-align: center;
+}
+.menu_list .menu{
+  width: 100%; height: 390px;
+}
+  .menu >li{
+    height: 150px; line-height: 150px; margin: auto;
+    background-color: #fff;
+    font-size: 3em; font-weight: 800; letter-spacing: 3px;
+  }
+  .menu >li.web:hover{ color: #f9d196; }
+  .menu >li.graphic:hover{ color: #b5c6a1; }
+  .menu >li.contact:hover{ color: #aecfee; }
+  .menu >li.contact:hover span{ color: #f45151; }
+
+.menu_list .info{
+  width: 250px; height: 100px; line-height: 100px; margin: 100px auto 0;
+  display: flex; justify-content: space-between;
+}
+  .info >li{ opacity: 0.6; }
+  .info >li:hover{ opacity: 1; }
+
 .menu_list.on{ display: flex; }
