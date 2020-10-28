@@ -15,5 +15,13 @@
 ::selection{ background-color: var(--accent-color); color: #fff; }
 
 #footBox{
-  max-width: 1200px; height: 300px; margin: auto; background-color: #9b8a81;
+  max-width: 1200px; height: 200px; margin: auto; background-color: #9b8a81;
+  overflow: hidden;
+  font: 16px var(--english-font); color: var(--black);
+  text-align: center;
 }
+#footBox >.info{
+  width: 400px; height: 50px; margin: 70px auto 20px;
+  display: flex; justify-content: space-around;
+}
+#footBox >p{ font-size: 1em; }
