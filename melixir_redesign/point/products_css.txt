@@ -1,0 +1,35 @@
+products
+
+1.토너스페셜키트
+- select 2개
+- KEY INGREDIENTS 2개
+
+2.크림스페셜키트
+- select 2개
+- KEY INGREDIENTS 3개
+
+/* s01_ing02======================= */
+3.립버터
+- select 1개
+- KEY INGREDIENTS 2개
+
+4.밸런싱토너
+- select 1개
+- KEY INGREDIENTS 2개
+
+5.스쿠알린 페이스 오일
+- select 1개
+- KEY INGREDIENTS 2개
+
+/* s01_ing03======================= */
+6.크림
+- select 1개
+- KEY INGREDIENTS 3개
+
+7.비타민 세럼
+- select 1개
+- KEY INGREDIENTS 3개
+
+8.토너+크림세트
+- select 1개
+- KEY INGREDIENTS 3개
