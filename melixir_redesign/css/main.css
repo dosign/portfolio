@@ -50,7 +50,7 @@
     .cont01 >.title >p{ font: 1em var(--korean); line-height: 40px; }
 
   .cont_list >.cont02{
-    background: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url(../img/vegan-event.png) center/cover;
+    background: url(../img/vegan-event.png) center/cover;
     background-repeat: no-repeat;
     overflow: hidden;
     position: relative;
